@@ -8,18 +8,20 @@ class Pages extends Controller {
     public function index()
     {
         $posts = $this->postModel->getPosts();
-
         $data = [
             'title' => 'Welcome',
-            'posts' => $posts
+            'posts' =>  $posts
         ];
 
         $this->view('pages/index', $data);
     }
 
-    public function about()
+    public function about($id)
     {
-        $data = ['title' => 'About Us'];
+        $data = [
+            'author' => $id[0],
+            'title' => 'About Us'
+        ];
         $this->view('pages/about', $data);
     }
 }

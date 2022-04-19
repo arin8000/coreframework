@@ -1,0 +1,7 @@
+{
+    "name": "arinyaghoubiladmin/oop",
+    "require": {},
+    "autoload": {
+        "classmap": ["app/libs"]
+    }
+}
