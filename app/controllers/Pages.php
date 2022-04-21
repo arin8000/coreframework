@@ -1,4 +1,9 @@
 <?php
+
+namespace App\Controllers;
+
+use App\Libs\Controller;
+
 class Pages extends Controller {
     public function __construct()
     {
@@ -19,7 +24,6 @@ class Pages extends Controller {
     public function about($id)
     {
         $data = [
-            'author' => $id[0],
             'title' => 'About Us'
         ];
         $this->view('pages/about', $data);

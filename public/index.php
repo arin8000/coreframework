@@ -1,8 +1,10 @@
 <?php
 
-require dirname(__DIR__) . '/app/config/config_dev.php';
+use App\Libs\Core;
+
+
+require_once realpath(dirname(__DIR__)) . '/app/Config/config_dev.php';
 require __DIR__.'/../vendor/autoload.php';
 
-
 // inti core lib
-$inti = new Core();
+$init = new Core;

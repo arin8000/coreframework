@@ -1,4 +1,6 @@
 <?php
+namespace App\Config;
+
 // DB params
 define('DB_HOST', 'localhost');
 define('DB_USER', '_YOUR_USER_');

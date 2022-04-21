@@ -5,15 +5,19 @@
  * loads the models and views
  */
 
+namespace App\Libs;
+
 class Controller {
     // load model
     public function model($model)
     {
         // require model file
-        require_once '../app/models/' . $model . '.php';
+//        require_once '../app/Models/' . $model . '.php';
 
         // instantiate model
-        return new $model();
+        $cname = "App\\Models\\" . $model;
+        return new $cname;
+//        return new $model();
     }
 
     // load view

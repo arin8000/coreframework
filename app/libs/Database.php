@@ -7,6 +7,10 @@
  * return rows and results
  */
 
+namespace App\Libs;
+
+use PDO;
+
 class Database {
     private $host = DB_HOST;
     private $user = DB_USER;

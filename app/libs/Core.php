@@ -4,9 +4,10 @@
  * creates URL & loads core controller
  * URL Format - /controller/method/params
  */
+namespace App\Libs;
 
 class Core {
-    protected $currentController = 'Pages';
+    public $currentController = 'Pages';
     protected $currentMethod = 'index';
     protected $params = [];
 
@@ -17,25 +18,18 @@ class Core {
 
         // look in controllers for first value
         if (isset($_GET['url'])) {
-            if (file_exists('../app/controllers/' . ucwords($url[0]) . '.php')) {
+            if (file_exists('../app/Controllers/' . ucwords($url[0]) . '.php')) {
                 // if exists, set as controller
                 $this->currentController = ucwords($url[0]);
                 // unset 0 index
                 unset($url[0]);
             }
         }
-//        if (file_exists('../app/controllers/' . ucwords($url[0]) . '.php')) {
-//            // if exists, set as controller
-//            $this->currentController = ucwords($url[0]);
-//            // unset 0 index
-//            unset($url[0]);
-//        }
-
-        // require the controller
-        require_once '../app/controllers/' . $this->currentController . '.php';
 
         // instantiate controller class
-        $this->currentController = new $this->currentController;
+        $cname = "App\\Controllers\\" . $this->currentController;
+        $this->currentController = new $cname;
+
 
         // check for second part of url
         if (isset($url[1])) {
